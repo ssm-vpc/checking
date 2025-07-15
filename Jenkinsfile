@@ -6,7 +6,7 @@ pipeline {
     AWS_ACCESS_KEY_ID     = credentials('aws-access-key-id')
     AWS_SECRET_ACCESS_KEY = credentials('aws-secret-access-key')
     // Set your desired AWS region
-    AWS_DEFAULT_REGION    = 'us-EAST-1'
+    AWS_DEFAULT_REGION    = 'us-east-1'
   }
 
   stages {
