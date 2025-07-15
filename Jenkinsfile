@@ -1,28 +1,28 @@
 pipeline {
     agent any
 
-  
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/ssm-vpc/checking.git', branch: 'main'
+                git 'https://github.com/ssm-vpc/checking.git'
             }
         }
 
-        stage('Terraform Init') {
+        stage('Init') {
             steps {
                 sh 'terraform init'
             }
         }
 
-        stage('Terraform Plan') {
+        stage('Plan') {
             steps {
                 sh 'terraform plan'
             }
         }
 
-        stage('Terraform Apply') {
+        stage('Apply') {
             steps {
+                input message: "Approve Terraform Apply?"
                 sh 'terraform apply -auto-approve'
             }
         }
