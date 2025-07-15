@@ -2,10 +2,8 @@ pipeline {
   agent any
 
   environment {
-    // Optionally set AWS credentials (requires Jenkins credentials setup)
-    AWS_ACCESS_KEY_ID     = credentials('aws-access-key-id')
-    AWS_SECRET_ACCESS_KEY = credentials('aws-secret-access-key')
-    // Set your desired AWS region
+    AWS_ACCESS_KEY_ID     = credentials('jenkins-aws-secret-key-id')
+    AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
     AWS_DEFAULT_REGION    = 'us-east-1'
   }
 
